@@ -1,7 +1,19 @@
-import { solutionName } from './solution.js';
+import { deepFlat } from './solution.js';
 
-describe('add two numbers', () => {
-    it(' 1 + 2 -> 3', () => {
-        expect(solutionName(1, 2)).toEqual(3);
+describe('deepFlat', () => {
+    test('flattens nested number arrays', () => {
+        expect(deepFlat([1, 2, [3, 4], [5, [6, 7]]])).toEqual([
+            1, 2, 3, 4, 5, 6, 7,
+        ]);
+    });
+
+    test('flattens nested number arrays', () => {
+        expect(deepFlat(['a', ['b', [['c'], ['d']], 'e']])).toEqual([
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+        ]);
     });
 });
