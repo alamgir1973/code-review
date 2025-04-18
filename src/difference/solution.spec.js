@@ -1,7 +1,10 @@
-import { solutionName } from './solution.js';
+import { difference } from '../difference/solution.js';
 
-describe('add two numbers', () => {
-    it(' 1 + 2 -> 3', () => {
-        expect(solutionName(1, 2)).toEqual(3);
+describe('compare difference', () => {
+    test(' [1, 2, 1], [2, 3]-> [1]', () => {
+        expect(difference([1, 2, 1], [2, 3])).toEqual([1]);
+    });
+    test(' [2, 1], [2, 3]-> [1]', () => {
+        expect(difference([2, 1], [2, 3])).toEqual([1]);
     });
 });

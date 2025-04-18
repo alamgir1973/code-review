@@ -1,7 +1,11 @@
-import { solutionName } from './solution.js';
+import { solutionName, splitObject } from '../split-object/solution.js';
 
-describe('add two numbers', () => {
-    it(' 1 + 2 -> 3', () => {
-        expect(solutionName(1, 2)).toEqual(3);
+describe('splitObject', () => {
+    test('split object', () => {
+        expect(splitObject({ a: 1, b: 2, c: 3 })).toEqual([
+            { a: 1 },
+            { b: 2 },
+            { c: 3 },
+        ]);
     });
 });
